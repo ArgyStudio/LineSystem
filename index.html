@@ -70,11 +70,8 @@
         const fbp = ck._fbp || null;
 
         // 3. Preparar payload (sin UUID, generado en backend)
-        const payload = {
-          subdomain: window.location.host,
-          fbc,
-          fbp
-        };
+        const SUBDOMAIN = 'bettroya';
+        const payload = { subdomain: SUBDOMAIN, fbc, fbp };
 
         // 4. Llamada a Lambda LineManager
         const API_URL = `https://t6cq896p7i.execute-api.us-east-2.amazonaws.com/prod/active-line`;
