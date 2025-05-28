@@ -96,12 +96,9 @@
 
     // 5. Construir mensaje y luego redirigir
     const message = `Hola, vengo por la promo del 200% extra! Mi código promocional es: ${uuid}`;
-    const waUrl = 'https://wa.me/' + number + '?text=' + encodeURIComponent(message);
-    window.location.href = waUrl;
-  } catch (err) {
-    console.error('Error en flujo de redirección:', err);
-  }
-});
+const waUrl = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+window.location.href = waUrl;
+
   </script>
 </body>
 </html>
