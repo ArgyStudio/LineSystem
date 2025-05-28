@@ -95,6 +95,11 @@
         
         // 3. Ahora sí rediriges
         window.location.href = waUrl;
+        } catch (err) {
+        console.error('Error en redirección:', err);
+        // Aquí podrías mostrar un mensaje al usuario o un fallback
+      }
+    });
 
   </script>
 </body>
