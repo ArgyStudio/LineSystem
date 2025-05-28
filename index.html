@@ -87,7 +87,7 @@
         if (!number || !uuid) throw new Error('Respuesta inválida de LineManager');
 
         // 5. Redirigir a WhatsApp con mensaje que incluye UUID   
-        const message = `Hola, vengo por la promo del 200% extra! Mi código promocional es: ${uuid}
+        const message = `Hola, vengo por la promo del 200% extra! Mi código promocional es: ${uuid}`
         window.location.href = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
       } catch (err) {
         console.error('Error en flujo de redirección:', err);
