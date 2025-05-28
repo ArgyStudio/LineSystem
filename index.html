@@ -87,17 +87,14 @@
         if (!number || !uuid) throw new Error('Respuesta inválida de LineManager');
 
         // 5. Redirigir a WhatsApp con mensaje que incluye UUID   
-        window.addEventListener('load', async () => {
-  try {
-    // ... (espera cookies, fetch al backend, etc.)
-
-    const { whatsapp_number: number, uuid } = data;
-    if (!number || !uuid) throw new Error('Respuesta inválida de LineManager');
-
-    // 5. Construir mensaje y luego redirigir
-    const message = `Hola, vengo por la promo del 200% extra! Mi código promocional es: ${uuid}`;
-const waUrl = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
-window.location.href = waUrl;
+        // 1. Literal del mensaje, cerrado con backtick
+        const message = `Hola, vengo por la promo del 200% extra! Mi código promocional es: ${uuid}`;
+        
+        // 2. Literal de la URL, también con backticks bien balanceados
+        const waUrl   = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+        
+        // 3. Ahora sí rediriges
+        window.location.href = waUrl;
 
   </script>
 </body>
